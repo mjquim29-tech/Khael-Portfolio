@@ -737,6 +737,135 @@
 #confettiCanvas.show{display:block}
 #successModal .qr-actions{display:flex;justify-content:center;gap:12px;margin-top:16px}
 
+
+/* Professional footer */
+.footer-social{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  margin-bottom:16px;
+  flex-wrap:wrap;
+}
+.footer-social a{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  text-decoration:none;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  transition:transform .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.footer-social a:hover{
+  transform:translateY(-3px);
+  background:rgba(56,189,248,0.14);
+  border-color:rgba(56,189,248,0.35);
+  box-shadow:0 10px 20px rgba(56,189,248,0.12);
+}
+.footer-social svg{
+  width:18px;
+  height:18px;
+  fill:currentColor;
+}
+footer .container:last-child{
+  text-align:center;
+}
+
+
+/* ===== Global Parallax Effects ===== */
+.parallax-layer{
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.section{
+  position:relative;
+  overflow:hidden;
+}
+
+/* subtle depth background */
+.section::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:radial-gradient(circle at 30% 20%, rgba(56,189,248,.08), transparent 35%),
+             radial-gradient(circle at 70% 80%, rgba(34,197,94,.06), transparent 40%);
+  pointer-events:none;
+  transform:translateZ(0);
+  z-index:-1;
+}
+
+
+/* ===== Cinematic Floating Particles Background ===== */
+#particles-bg{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+}
+
+/* hero mouse parallax */
+.hero-parallax{
+  transition:transform .15s ease-out;
+  will-change:transform;
+}
+
+/* smooth section transitions */
+.section{
+  transition:transform .6s ease, opacity .6s ease;
+}
+
+.section.reveal-section{
+  opacity:0;
+  transform:translateY(60px);
+}
+
+.section.reveal-section.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* ===== Liquid Glass Navbar ===== */
+.site-nav{
+  backdrop-filter: blur(14px);
+  background: rgba(15,23,42,0.55);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== Scroll Progress Bar ===== */
+#scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  width:0%;
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  z-index:9999;
+}
+
+/* ===== Cursor Glow ===== */
+.cursor-glow{
+  position:fixed;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  pointer-events:none;
+  background:radial-gradient(circle, rgba(56,189,248,0.25), transparent 70%);
+  transform:translate(-50%,-50%);
+  z-index:-1;
+  mix-blend-mode:screen;
+}
+
+/* ===== Interactive Skill Cards ===== */
+.skill:hover{
+  transform:translateY(-4px) scale(1.02);
+  transition:transform .25s ease;
+}
+
 </style>
 </head>
 <body>
@@ -1011,9 +1140,27 @@
   
     
 
-  <footer>
-    <div class="container">© 2026 Michael John Quim • Remote Support Professional • Upwork / OnlineJobs Ready</div>
-  </footer>
+  
+<footer>
+  <div class="container">
+    <div class="footer-social">
+      <a href="https://web.facebook.com/michaeljohn.quim" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6H16.7V4.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V11H7v3h2.8v8h3.7Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/mjquim/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.25 1.65a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z"/></svg>
+      </a>
+      <a href="https://t.me/KHAEL007" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 4.6 18.2 19c-.2 1-1 1.2-1.8.8l-4.3-3.2-2.1 2c-.2.2-.4.4-.9.4l.3-4.4 8-7.2c.4-.4-.1-.6-.5-.3l-9.8 6.2-4.2-1.3c-.9-.3-.9-.9.2-1.3l16.5-6.4c.8-.3 1.4.2 1.2 1.3Z"/></svg>
+      </a>
+      <a href="https://wa.me/639922140743" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3.9A11 11 0 0 0 3.4 18.3L2 22l3.8-1.3A11 11 0 1 0 20 3.9Zm-8.1 16c-1.8 0-3.5-.5-5-1.5l-.4-.2-2.2.7.7-2.1-.3-.4a8.8 8.8 0 1 1 7.2 3.5Zm4.8-6.6c-.3-.1-1.9-.9-2.2-1-.3-.1-.5-.1-.8.2l-.6.8c-.2.2-.4.3-.7.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.2-.5-.5-.4-.8-.4h-.7c-.2 0-.6.1-.9.4-.3.3-1.1 1-1.1 2.4s1.1 2.8 1.2 3c.2.2 2.2 3.4 5.4 4.8.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4Z"/></svg>
+      </a>
+    </div>
+    <div class="container">© 2026 Michael John Quim • Freelancer • Customer Support Specialist • Chat support • Virtual Assistant</div>
+  </div>
+</footer>
+
 
   
 <div class="modal" id="qrModal" aria-hidden="true">
@@ -1063,7 +1210,7 @@
     </div>
   </div>
 
-  <button class="toggle" id="themeToggle">Toggle Mode</button>
+  <button class="toggle" id="themeToggle">Change Theme</button>
 
 
   <script>
@@ -1563,6 +1710,153 @@ const texts = [
   });
 })();
 </script>
+
+<script>
+/* ===== Parallax Scroll System ===== */
+(function(){
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceMotion) return;
+
+  const layers = document.querySelectorAll('.hero-card, .card, .section-title, .section-desc');
+
+  function updateParallax(){
+    const scrollY = window.scrollY;
+
+    layers.forEach((el,i)=>{
+      const rect = el.getBoundingClientRect();
+      const speed = (i % 5 + 1) * 0.015;
+
+      const offset = (rect.top + scrollY) * speed;
+      el.style.transform = "translateY(" + (offset * -0.25) + "px)";
+    });
+  }
+
+  window.addEventListener("scroll", updateParallax, {passive:true});
+  updateParallax();
+
+})();
+</script>
+
+
+<script>
+/* ===== Floating Particles ===== */
+(function(){
+const canvas=document.getElementById("particles-bg");
+if(!canvas) return;
+
+const ctx=canvas.getContext("2d");
+let w,h;
+let particles=[];
+
+function resize(){
+w=canvas.width=window.innerWidth;
+h=canvas.height=window.innerHeight;
+}
+resize();
+window.addEventListener("resize",resize);
+
+for(let i=0;i<60;i++){
+particles.push({
+x:Math.random()*w,
+y:Math.random()*h,
+vx:(Math.random()-.5)*0.3,
+vy:(Math.random()-.5)*0.3,
+r:Math.random()*2+1
+});
+}
+
+function animate(){
+ctx.clearRect(0,0,w,h);
+
+particles.forEach(p=>{
+p.x+=p.vx;
+p.y+=p.vy;
+
+if(p.x<0||p.x>w) p.vx*=-1;
+if(p.y<0||p.y>h) p.vy*=-1;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="rgba(125,211,252,0.6)";
+ctx.fill();
+});
+
+requestAnimationFrame(animate);
+}
+animate();
+})();
+
+/* ===== Mouse Hero Parallax ===== */
+(function(){
+const hero=document.querySelector(".hero-card");
+if(!hero) return;
+
+document.addEventListener("mousemove",(e)=>{
+const x=(e.clientX/window.innerWidth-0.5)*20;
+const y=(e.clientY/window.innerHeight-0.5)*20;
+hero.style.transform="rotateY("+x+"deg) rotateX("+(-y)+"deg)";
+});
+})();
+
+/* ===== Section Reveal ===== */
+(function(){
+const sections=document.querySelectorAll(".section");
+sections.forEach(s=>s.classList.add("reveal-section"));
+
+const io=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add("visible");
+}
+});
+},{threshold:0.15});
+
+sections.forEach(s=>io.observe(s));
+})();
+</script>
+
+
+<script>
+/* ===== Scroll Progress Bar ===== */
+(function(){
+const bar=document.getElementById("scroll-progress");
+function update(){
+const h=document.documentElement;
+const sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+bar.style.width=sc+"%";
+}
+window.addEventListener("scroll",update,{passive:true});
+update();
+})();
+
+/* ===== Cursor Glow ===== */
+(function(){
+const glow=document.getElementById("cursorGlow");
+if(!glow) return;
+document.addEventListener("mousemove",(e)=>{
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+});
+})();
+
+/* ===== Skill Card Interaction ===== */
+(function(){
+const cards=document.querySelectorAll(".skill");
+cards.forEach(card=>{
+card.addEventListener("mousemove",(e)=>{
+const r=card.getBoundingClientRect();
+const x=(e.clientX-r.left)/r.width-0.5;
+const y=(e.clientY-r.top)/r.height-0.5;
+card.style.transform="rotateX("+(-y*6)+"deg) rotateY("+(x*6)+"deg)";
+});
+card.addEventListener("mouseleave",()=>{
+card.style.transform="";
+});
+});
+})();
+</script>
+
 </body>
 
 </html>
